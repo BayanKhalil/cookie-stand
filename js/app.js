@@ -1,6 +1,8 @@
 'use strict';
 let hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
-
+function random(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+    }
 
 let seattle = {
     min: 23,
@@ -8,10 +10,11 @@ let seattle = {
     avgCookies: 6.3,
     customersArray: [],
     cookiesArray: [],
+    total:0,
     getCustomersArray: function () {
         for (let i = 0; i < hours.length; i++) {
 
-            this.customersArray[i] = randomAge(this.min, this.max);
+            this.customersArray[i] = random(this.min, this.max);
             console.log(this.customersArray);
         }
 
@@ -20,19 +23,64 @@ let seattle = {
 
     getCookiesArray: function () {
         for (let i = 0; i < this.customersArray.length; i++) {
-            this.cookiesArray[i] = this.customersArray[i] * this.avgCookies;
+            this.cookiesArray[i] = (Math.floor(this.customersArray[i] * this.avgCookies));
             console.log(this.cookiesArray);
+            this.total+=this.cookiesArray[i]
         }
+       
 
-    }
+    },
+    render:function(){
+        
+        let parent= document.getElementById('parent');
+        console.log(parent);
+        
+        let shopName = document.createElement('h3');
+        
+        parent.appendChild(shopName);
+        
+   
+        shopName.textContent = 'Seattle';
+        
+        
+        let unorderedList=document.createElement('ul');
+        
+        parent.appendChild(unorderedList);
+         
+    
+        for(let i =0;i<hours.length;i++){
+          
+          let listItem=document.createElement('li');
+         
+          unorderedList.appendChild(listItem);
+          
+          listItem.textContent = `${hours[i]}: ${this.cookiesArray[i]} cookies`
+        }
+    
+       
+        let totalItem = document.createElement('li');
+    
+        unorderedList.appendChild(totalItem);
+    
+        totalItem.textContent=`total: ${this.total} cookies`;
+        
+      }
+
 
 }
-function randomAge(min, max) {
-return Math.floor(Math.random() * (max - min + 1) + min);
-}
+
+
+
+
+
+
+
+
+
+
 seattle.getCustomersArray();
 seattle.getCookiesArray();
-
+seattle.render();
 
 
 let tokyo = {
@@ -41,10 +89,11 @@ let tokyo = {
     avgCookies: 1.2,
     customersArray: [],
     cookiesArray: [],
+    total:0,
     getCustomersArray: function () {
         for (let i = 0; i < hours.length; i++) {
 
-            this.customersArray[i] = randomAge(this.min, this.max);
+            this.customersArray[i] = random(this.min, this.max);
             console.log(this.customersArray);
         }
 
@@ -53,18 +102,55 @@ let tokyo = {
 
     getCookiesArray: function () {
         for (let i = 0; i < this.customersArray.length; i++) {
-            this.cookiesArray[i] = this.customersArray[i] * this.avgCookies;
+            this.cookiesArray[i] = Math.floor(this.customersArray[i] * this.avgCookies);
             console.log(this.cookiesArray);
+            this.total+=this.cookiesArray[i]
         }
 
-    }
+    },
+    render:function(){
+        
+        let parent= document.getElementById('parent');
+        console.log(parent);
+        
+        let shopName = document.createElement('h3');
+        
+        parent.appendChild(shopName);
+        
+   
+        shopName.textContent = 'Tokyo';
+        
+        
+        let unorderedList=document.createElement('ul');
+        
+        parent.appendChild(unorderedList);
+         
+    
+        for(let i =0;i<hours.length;i++){
+          
+          let listItem=document.createElement('li');
+         
+          unorderedList.appendChild(listItem);
+          
+          listItem.textContent = `${hours[i]}: ${this.cookiesArray[i]} cookies`
+        }
+    
+       
+        let totalItem = document.createElement('li');
+    
+        unorderedList.appendChild(totalItem);
+    
+        totalItem.textContent=`total: ${this.total} cookies`;
+        
+      }
+
 
 }
-function randomAge(min, max) {
-return Math.floor(Math.random() * (max - min + 1) + min);
-}
+
+
 tokyo.getCustomersArray();
 tokyo.getCookiesArray();
+tokyo.render();
 
 
 
@@ -74,10 +160,11 @@ let dubai = {
     avgCookies: 3.7,
     customersArray: [],
     cookiesArray: [],
+    total:0,
     getCustomersArray: function () {
         for (let i = 0; i < hours.length; i++) {
 
-            this.customersArray[i] = randomAge(this.min, this.max);
+            this.customersArray[i] = random(this.min, this.max);
             console.log(this.customersArray);
         }
 
@@ -86,19 +173,53 @@ let dubai = {
 
     getCookiesArray: function () {
         for (let i = 0; i < this.customersArray.length; i++) {
-            this.cookiesArray[i] = this.customersArray[i] * this.avgCookies;
+            this.cookiesArray[i] =Math.floor( this.customersArray[i] * this.avgCookies);
             console.log(this.cookiesArray);
+            this.total+=this.cookiesArray[i]
         }
 
-    }
+    },
+    render:function(){
+        
+        let parent= document.getElementById('parent');
+        console.log(parent);
+        
+        let shopName = document.createElement('h3');
+        
+        parent.appendChild(shopName);
+        
+   
+        shopName.textContent = 'Dubai';
+        
+        
+        let unorderedList=document.createElement('ul');
+        
+        parent.appendChild(unorderedList);
+         
+    
+        for(let i =0;i<hours.length;i++){
+          
+          let listItem=document.createElement('li');
+         
+          unorderedList.appendChild(listItem);
+          
+          listItem.textContent = `${hours[i]}: ${this.cookiesArray[i]} cookies`
+        }
+    
+       
+        let totalItem = document.createElement('li');
+    
+        unorderedList.appendChild(totalItem);
+    
+        totalItem.textContent=`total: ${this.total} cookies`;
+        
+      }
 
 }
-function randomAge(min, max) {
-return Math.floor(Math.random() * (max - min + 1) + min);
-}
+
 dubai.getCustomersArray();
 dubai.getCookiesArray();
-
+dubai.render();
 
 
 let paris = {
@@ -107,10 +228,11 @@ let paris = {
     avgCookies: 2.3,
     customersArray: [],
     cookiesArray: [],
+    total:0,
     getCustomersArray: function () {
         for (let i = 0; i < hours.length; i++) {
 
-            this.customersArray[i] = randomAge(this.min, this.max);
+            this.customersArray[i] = random(this.min, this.max);
             console.log(this.customersArray);
         }
 
@@ -119,18 +241,54 @@ let paris = {
 
     getCookiesArray: function () {
         for (let i = 0; i < this.customersArray.length; i++) {
-            this.cookiesArray[i] = this.customersArray[i] * this.avgCookies;
+            this.cookiesArray[i] = Math.floor(this.customersArray[i] * this.avgCookies);
             console.log(this.cookiesArray);
+            this.total+=this.cookiesArray[i]
         }
 
-    }
+    },
+    render:function(){
+        
+        let parent= document.getElementById('parent');
+        console.log(parent);
+        
+        let shopName = document.createElement('h3');
+        
+        parent.appendChild(shopName);
+        
+   
+        shopName.textContent = 'Paris';
+        
+        
+        let unorderedList=document.createElement('ul');
+        
+        parent.appendChild(unorderedList);
+         
+    
+        for(let i =0;i<hours.length;i++){
+          
+          let listItem=document.createElement('li');
+         
+          unorderedList.appendChild(listItem);
+          
+          listItem.textContent = `${hours[i]}: ${this.cookiesArray[i]} cookies`
+        }
+    
+       
+        let totalItem = document.createElement('li');
+    
+        unorderedList.appendChild(totalItem);
+    
+        totalItem.textContent=`total: ${this.total} cookies`;
+        
+      }
+    
 
 }
-function randomAge(min, max) {
-return Math.floor(Math.random() * (max - min + 1) + min);
-}
+
 paris.getCustomersArray();
 paris.getCookiesArray();
+paris.render();
 
 
 
@@ -141,10 +299,11 @@ let lima = {
     avgCookies: 4.6,
     customersArray: [],
     cookiesArray: [],
+    total:0,
     getCustomersArray: function () {
         for (let i = 0; i < hours.length; i++) {
 
-            this.customersArray[i] = randomAge(this.min, this.max);
+            this.customersArray[i] = random(this.min, this.max);
             console.log(this.customersArray);
         }
 
@@ -153,100 +312,54 @@ let lima = {
 
     getCookiesArray: function () {
         for (let i = 0; i < this.customersArray.length; i++) {
-            this.cookiesArray[i] = this.customersArray[i] * this.avgCookies;
+            this.cookiesArray[i] = Math.floor(this.customersArray[i] * this.avgCookies);
             console.log(this.cookiesArray);
+            this.total+=this.cookiesArray[i]
         }
 
-    }
+    },
+    render:function(){
+        
+        let parent= document.getElementById('parent');
+        console.log(parent);
+        
+        let shopName = document.createElement('h3');
+        
+        parent.appendChild(shopName);
+        
+   
+        shopName.textContent = 'Lima';
+        
+        
+        let unorderedList=document.createElement('ul');
+        
+        parent.appendChild(unorderedList);
+         
+    
+        for(let i =0;i<hours.length;i++){
+          
+          let listItem=document.createElement('li');
+         
+          unorderedList.appendChild(listItem);
+          
+          listItem.textContent = `${hours[i]}: ${this.cookiesArray[i]} cookies`
+        }
+    
+       
+        let totalItem = document.createElement('li');
+    
+        unorderedList.appendChild(totalItem);
+    
+        totalItem.textContent=`total: ${this.total} cookies`;
+        
+      }
 
 }
-function randomAge(min, max) {
-return Math.floor(Math.random() * (max - min + 1) + min);
-}
+
 lima.getCustomersArray();
 lima.getCookiesArray();
+lima.render();
 
 
 
 
-
-
-let parent =document.getElementById('parent');
-console.log(parent);
-
-let image = document.createElement('img');
-parent.appendChild(image);
-image.setAttribute('src','img/salmon.png');
-
-
-let header =document.createElement('h1');
-parent.appendChild(header);
-header.textContent='seattle';
-
-let unorderedList = document.createElement('ul');
-parent.appendChild(unorderedList);
-
-for(let i =0 ; i<hours.length;i++){
-    let listItem = document.createElement('li');
-    unorderedList.appendChild(listItem);
-    listItem.textContent=`${hours[i]} , ${seattle.cookiesArray[i]} it\'s avg cookies`;
-
-    
-   
-}
-
-
-let header2 =document.createElement('h1');
-parent.appendChild(header2);
-header2.textContent='Tokyo';
-let unorderedList2 = document.createElement('ul');
-parent.appendChild(unorderedList2);
-
-for(let i =0 ; i<hours.length;i++){
-    let listItem= document.createElement('li');
-    unorderedList2.appendChild(listItem);
-    listItem.textContent=`${hours[i]} , ${tokyo.cookiesArray[i]} it\'s avg cookies`;
-   
-}
-
-
-let header3 =document.createElement('h1');
-parent.appendChild(header3);
-header3.textContent='Dubai';
-let unorderedList3 = document.createElement('ul');
-parent.appendChild(unorderedList3);
-
-for(let i =0 ; i<hours.length;i++){
-    let listItem= document.createElement('li');
-    unorderedList3.appendChild(listItem);
-    listItem.textContent=`${hours[i]} , ${dubai.cookiesArray[i]} it\'s avg cookies`;
-   
-}
-
-
-let header4 =document.createElement('h1');
-parent.appendChild(header4);
-header4.textContent='Paris';
-let unorderedList4 = document.createElement('ul');
-parent.appendChild(unorderedList4);
-
-for(let i =0 ; i<hours.length;i++){
-    let listItem= document.createElement('li');
-    unorderedList4.appendChild(listItem);
-    listItem.textContent=`${hours[i]} , ${paris.cookiesArray[i]} it\'s avg cookies`;
-   
-}
-
-
-let header5 =document.createElement('h1');
-parent.appendChild(header5);
-header5.textContent='Lima';
-let unorderedList5 = document.createElement('ul');
-parent.appendChild(unorderedList5);
-
-for(let i =0 ; i<hours.length;i++){
-    let listItem= document.createElement('li');
-    unorderedList5.appendChild(listItem);
-    listItem.textContent=`${hours[i]} , ${lima.cookiesArray[i]} it\'s avg cookies`;
-   
-}
