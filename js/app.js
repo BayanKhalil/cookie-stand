@@ -98,8 +98,7 @@ let parent = document.getElementById('parent')
 let table = document.createElement('table')
 parent.appendChild(table)
 
-// creatHeaderRow
-
+function creatHeaderRow() {
   let headerRow = document.createElement('tr');
   table.appendChild(headerRow);
   let th = document.createElement('th');
@@ -115,7 +114,7 @@ parent.appendChild(table)
   th.textContent = 'Location Total';
   headerRow.appendChild(th);
   console.log(table);
+}
 
-
-
+creatHeaderRow();
 
