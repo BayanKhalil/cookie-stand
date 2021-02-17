@@ -1,0 +1,47 @@
+header nav ul Li{
+    display: inline;
+}
+header nav ul Li a{
+    text-decoration: none;
+    font-family:cursive;
+    font-weight: bold;
+    font-size:x-large;
+    padding: 50px;
+    margin: 200px;
+   
+}
+li{
+    display:block; 
+    
+
+}
+h2{
+    font-size:20px;
+    font-family:Euphemia;
+    margin-left: 83px;
+}
+main{
+    display: flex;
+}
+.contact{
+    padding-inline:inherit;
+    flex: 35%;
+
+
+
+}
+main div ul li{
+    margin: 50px;
+}
+header nav ul {
+    list-style: none;
+}
+main div li {
+    margin: 50px;
+}
+img{
+    width: 44%;
+    margin-left: 65px;
+}
+
+
