@@ -3,7 +3,7 @@ let hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '
 function random(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
-
+let stores=[];
 function Location(name, min, max, avg, customersArray, cookiesArray, total) {
   this.name = name;
   this.min = min;
@@ -12,6 +12,7 @@ function Location(name, min, max, avg, customersArray, cookiesArray, total) {
   this.customersArray = customersArray;
   this.cookiesArray = cookiesArray;
   this.total = total
+  stores.push(this);
   
 
 }
@@ -118,3 +119,34 @@ function creatHeaderRow() {
 
 creatHeaderRow();
 
+function creatRows() {
+  for (let i = 1; i < stores.length; i++) {
+let dataRow = document.createElement('tr');
+table.appendChild(dataRow)
+for (let j = 0; j < 15; j++) {
+  let td1 = document.createElement('td');
+
+  dataRow.appendChild(td1);
+
+  if (j==0) {
+      td1.textContent=stores[i].name
+  }else{
+      td1.textContent=stores[i].cookiesArray[j]
+  }
+}
+}
+}
+creatRows();
+
+
+function creatFooterRow() {
+  let footerRow = document.createElement('tr');
+  table.appendChild(footerRow);
+  let td1 = document.createElement('td');
+  td1.textContent = 'totals';
+  footerRow.appendChild(td1);
+  
+
+  }
+
+  creatFooterRow();
