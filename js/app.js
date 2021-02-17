@@ -3,7 +3,7 @@ let hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '
 function random(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
-let stores=[];
+let stores = [];
 function Location(name, min, max, avg, customersArray, cookiesArray, total) {
   this.name = name;
   this.min = min;
@@ -12,8 +12,9 @@ function Location(name, min, max, avg, customersArray, cookiesArray, total) {
   this.customersArray = customersArray;
   this.cookiesArray = cookiesArray;
   this.total = total
+  this.totalCookiesPerHour = 0;
   stores.push(this);
-  
+
 
 }
 Location.prototype.getCustomersArray = function () {
@@ -120,21 +121,23 @@ function creatHeaderRow() {
 creatHeaderRow();
 
 function creatRows() {
-  for (let i = 1; i < stores.length; i++) {
-let dataRow = document.createElement('tr');
-table.appendChild(dataRow)
-for (let j = 0; j < 15; j++) {
-  let td1 = document.createElement('td');
-
-  dataRow.appendChild(td1);
-
-  if (j==0) {
-      td1.textContent=stores[i].name
-  }else{
-      td1.textContent=stores[i].cookiesArray[j]
+  for (let i = 0; i < stores.length; i++) {
+    let dataRow = document.createElement('tr');
+    table.appendChild(dataRow)
+    let td1 = document.createElement('td');
+    dataRow.appendChild(td1);
+    td1.textContent = stores[i].name;
+    for (let x = 0; x < hours.length; x++) {
+      let td2 = document.createElement('td');
+      td2.textContent = stores[i].cookiesArray[x];
+      dataRow.appendChild(td2);
+    
+    }
+    let td3 = document.createElement('td')
+  dataRow.appendChild(td3);
+  td3.textContent = stores[i].total;
   }
-}
-}
+  
 }
 creatRows();
 
@@ -142,11 +145,32 @@ creatRows();
 function creatFooterRow() {
   let footerRow = document.createElement('tr');
   table.appendChild(footerRow);
-  let td1 = document.createElement('td');
-  td1.textContent = 'totals';
-  footerRow.appendChild(td1);
-  
+  let th1 = document.createElement('th');
+  th1.textContent = 'totals';
+  footerRow.appendChild(th1);
+  let grandTotal = 0;
+  for (let i = 0; i < hours.length; i++) {
+    let totalEachHour = 0;
+    for (let j = 0; j < stores.length; j++) {
+      totalEachHour += stores[j].cookiesArray[i]
 
+
+    }
+    grandTotal+=totalEachHour
+
+
+    let th2 = document.createElement('th');
+    footerRow.appendChild(th2);
+    th2.textContent = totalEachHour;
   }
+  let th3 = document.createElement('th');
+  footerRow.appendChild(th3);
+  th3.textContent = grandTotal
 
-  creatFooterRow();
+
+
+}
+
+creatFooterRow();
+
+
