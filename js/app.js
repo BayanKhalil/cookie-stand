@@ -4,6 +4,7 @@ function random(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 let stores = [];
+let shopForm =document.getElementById('shopForm');
 function Location(name, min, max, avg, customersArray, cookiesArray, total) {
   this.name = name;
   this.min = min;
@@ -76,23 +77,23 @@ let lima = new Location('lima', 2, 16, 4.6, [], [], 0);
 
 seattle.getCustomersArray()
 seattle.getCookiesArray()
-seattle.render()
+// seattle.render()
 
 tokyo.getCustomersArray()
 tokyo.getCookiesArray()
-tokyo.render()
+// tokyo.render()
 
 dubai.getCustomersArray()
 dubai.getCookiesArray()
-dubai.render()
+// dubai.render()
 
 paris.getCustomersArray()
 paris.getCookiesArray()
-paris.render()
+// paris.render()
 
 lima.getCustomersArray()
 lima.getCookiesArray()
-lima.render()
+// lima.render()
 
 
 
@@ -172,5 +173,46 @@ function creatFooterRow() {
 }
 
 creatFooterRow();
+
+//  adding event and form 
+
+
+
+shopForm.addEventListener('submit',newLocation);
+
+function newLocation(event){
+  event.preventDefault();
+
+  let location=event.target.locationField.value;
+  let min=event.target.min.value;
+  let max=event.target.max.value;
+  let avg=event.target.avg.value;
+  // console.log(location,min,max,avg);
+  let addLocation=new Location(location,min,max,avg);
+  
+
+  // addLocation.getCustomersArray();
+  //  addLocation.getCookiesArray();
+   addLocation.render();
+
+
+  let container = document.getElementById('parent');
+      container.textContent='';
+      for (var i = 0; i < stores.length; i++) {
+        // stores[i].getCustomersArray();
+        // stores[i].getCookiesArray();
+        stores[i].render();
+      }
+      
+
+
+  
+  
+
+}
+
+
+
+
 
 
