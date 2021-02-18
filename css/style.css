@@ -43,5 +43,8 @@ img{
     width: 44%;
     margin-left: 65px;
 }
+input:required {
+    background-image: linear-gradient(to right, pink, lightgreen);
+  }
 
 
