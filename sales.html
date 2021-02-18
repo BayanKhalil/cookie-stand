@@ -21,10 +21,36 @@
     </style>
 </head>
 <body>
+    <form action="" id="shopForm">
+
+        <fieldset>
+            <label for="locationField">Location (required)</label>
+            <input type="text" id="locationField" name="locationField" autocomplete="on" required>
+            <br>
+            <br>
+            <label for="min">Min (required)</label>
+            <input type="text" id="min" name=" min">
+            <br>
+            <br>
+            <label for="max">Max (required)</label>
+            <input type="text" id="max" name=" max">
+            <br>
+            <br>
+            <label for="avg">Avg (required)</label>
+            <input type="text" id="avg" name=" avg">
+            <br>
+
+            <br>
+            <input type="submit" onClick="parent.location='sales.html'" value="submit">
+        </fieldset>
+
+    </form>
+    <div class="contact"> </div>
 
     <div id="parent">
         
     <script src="js/app.js"></script>
+    
     <header>
         <nav>
             <ul>
