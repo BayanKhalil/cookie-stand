@@ -173,6 +173,7 @@ function creatFooterRow() {
 
 creatFooterRow();
 
+
 //  adding event and form 
 
 
@@ -212,3 +213,6 @@ function newLocation(event) {
 
 
 }
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+  }

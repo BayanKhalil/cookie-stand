@@ -2,9 +2,7 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>cookie stand</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -18,66 +16,51 @@
             </ul>
         </nav>
         <img src="https://github.com/LTUC/amman-201d15/blob/main/class-08/lab-b/assets/chinook.jpg?raw=true">
-        <img src="https://github.com/LTUC/amman-201d15/blob/main/class-08/lab-b/assets/salmon.png?raw=true">
-
+        <img src="https://github.com/LTUC/amman-201d15/blob/main/class-08/lab-b/assets/salmon.png?raw=true" >
+        <img src="img/cutter.jpeg" >
+        <img src="img/family.jpg" >
+        <img src="img/fish.jpg" >
+        <img src="img/frosted-cookie.jpg" >
+        <img src="img/shirt.jpg" >
+    
 
     </header>
     <main>
-        <form action="" id="shopForm">
-            <fieldset>
-                <label for="locationField">Location (required)</label>
-                <input type="text" id="locationField" name="locationField" autocomplete="on" required>
-                <br>
-                <br>
-                <label for="min">Min (required)</label>
-                <input type="text" id="min" name=" min">
-                <br>
-                <br>
-                <label for="max">Max (required)</label>
-                <input type="text" id="max" name=" max">
-                <br>
-                <br>
-                <label for="avg">Avg (required)</label>
-                <input type="text" id="avg" name=" avg">
-                <br>
-
-                <br>
-                <input type="submit" onClick="parent.location='sales.html'" value="submit">
-            </fieldset>
-
-
-        </form>
-        <div class="contact">
-            <h2> locations</h2>
-            <ul>
-                <li>seattle</li>
-                <li>tokyo</li>
-                <li>dubai</li>
-                <li>paris</li>
-                <li>lima</li>
-
-            </ul>
+    <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn">location</button>
+        <div id="myDropdown" class="dropdown-content">
+          <a href="#">seattle</a>
+          <a href="#">tokyo</a>
+          <a href="#">dubai</a>
+          <a href="#">paris</a>
+          <a href="#">lima</a>
         </div>
-        <div class="contact">
-            <h2> hours open</h2>
-            <li>6:00am - 1:00pm</li>
-            <li>7:00am - 7:00pm</li>
-            <li>8:00am - 5:00pm</li>
-            <li>9:00am - 7:00pm</li>
-            <li>6:00am - 5:00pm</li>
-        </div>
-        <div class="contact">
-            <h2> Contact</h2>
-            <ul>
-                <li>021589666 </li>
-                <li>5855596878</li>
-                <li>07968562225</li>
-                <li>paris@salmon.com</li>
-                <li>014555588888</li>
+      </div>
 
-            </ul>
-        </div>
 
+      <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn">hours open</button>
+        <div id="myDropdown" class="dropdown-content">
+          <a href="#">6:00am - 1:00pm</a>
+          <a href="#">7:00am - 7:00pm</a>
+          <a href="#">8:00am - 5:00pm</a>
+          <a href="#">9:00am - 7:00pm</a>
+          <a href="#">6:00am - 5:00pm</a>
+        </div>
+      </div>
+
+      
+      <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn"> Contact</button>
+        <div id="myDropdown" class="dropdown-content">
+          <a href="#">021589666 </a>
+          <a href="#">5855596878</a>
+          <a href="#">07968562225</a>
+          <a href="#">paris@salmon.com</a>
+          <a href="#">014555588888</a>
+        </div>
+      </div>
+   
     </main>
     <div id="parent"></div>
 

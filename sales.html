@@ -1,26 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
     <title>cookie stand</title>
+    <link rel="stylesheet" href="style.css">
 
     <style>
+
+        html{
+            background-color: rgb(160, 167, 62);
+        }
+        #parent{
+            padding-left: 14%;
+    text-align: center;
+    margin: 6%;
+    width: 51%;
+        }
         table{
-            border: solid 1px black;
+            text-align: center;
+            border: solid 1px rgb(255, 255, 255);
 
         }
         th{
-           border: solid 1px black;
+            color: rgb(168, 113, 9);
+           border: solid 1px rgb(255, 253, 253);
         }
         td{
-           border: solid 1px black;
+          color: rgb(168, 113, 9);
+;
+           border: solid 1px rgb(255, 255, 255);
         }
+        header nav ul Li{
+    display: inline;
+}
+
+        header nav ul Li a{
+            color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-family:cursive;
+    font-weight: 50%;
+    font-size:x-large;
+    padding: 50px;
+    margin: 200px;
+   
+}
+li{
+    display:block; 
+    
+
+}
+th:hover {
+    color: rgb(255, 255, 255);
+  }
+  td:hover {
+    color: rgb(191, 194, 11);
+  }
 
     </style>
 </head>
 <body>
+    
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sales.html">Sales</a></li>
+            </ul>
+        </nav>
+
+    </header>
     <form action="" id="shopForm">
 
         <fieldset>
@@ -51,14 +99,8 @@
         
     <script src="js/app.js"></script>
     
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="sales.html">Sales</a></li>
-            </ul>
-        </nav>
-
-    </header>
+    <div id="parent"></div>
+        
+    <script src="js/app.js"></script>
 </body>
 </html>
