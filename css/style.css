@@ -8,6 +8,7 @@ header nav ul Li a{
     font-size:x-large;
     padding: 50px;
     margin: 200px;
+    color:rgb(160, 167, 62);
    
 }
 li{
@@ -15,33 +16,37 @@ li{
     
 
 }
-h2{
-    font-size:20px;
-    font-family:Euphemia;
-    margin-left: 83px;
-}
+
 main{
     display: flex;
 }
-.contact{
-    padding-inline:inherit;
-    flex: 35%;
-
-
-
-}
-main div ul li{
-    margin: 50px;
-}
-header nav ul {
-    list-style: none;
-}
-main div li {
-    margin: 50px;
-}
 img{
-    width: 44%;
-    margin-left: 65px;
+    
+    border: 9px solid rgb(160, 167, 62);
+    border-radius: 19px;
+    padding: 39px;
+    width: 85px;
+    
 }
-
+.dropdown{
+    margin-right: 1%;
+    padding-left: 15%;
+}
+.dropdown-content {
+    /* display:none; */
+    /* position: absolute; */
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  button:hover {
+    color: blue;
+  }
 
