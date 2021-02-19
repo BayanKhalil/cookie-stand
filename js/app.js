@@ -174,9 +174,45 @@ function creatFooterRow() {
 creatFooterRow();
 
 
+//  adding event and form 
 
 
-  function myFunction() {
+
+shopForm.addEventListener('submit', newLocation);
+
+function newLocation(event) {
+    event.preventDefault();
+
+    let location = event.target.locationField.value;
+    let min = event.target.min.value;
+    let max = event.target.max.value;
+    let avg = event.target.avg.value;
+    // console.log(location,min,max,avg);
+    let addLocation = new Location(location, min, max, avg);
+
+
+    addLocation.getCustomersArray();
+     addLocation.getCookiesArray();
+    //    addLocation.render();
+
+
+    // let container = document.getElementById('parent');
+    table.textContent = '';
+    console.log(stores);
+    creatHeaderRow();
+    for (var i = 0; i < stores.length; i++) {
+        stores[i].getCustomersArray();
+        stores[i].getCookiesArray();
+        // console.log('hello',stores[i]); 
+    }
+    creatRows();
+    creatFooterRow()
+
+
+
+
+
+}
+function myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
   }
-  
