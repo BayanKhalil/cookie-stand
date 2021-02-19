@@ -1,14 +1,22 @@
+h1{
+     font-family: Verdana;
+     color: cornsilk;
+
+    position: relative;
+    left: 30%;
+}
+
 header nav ul Li{
     display: inline;
 }
 header nav ul Li a{
     text-decoration: none;
-    font-family:cursive;
+    font-family: Georgia;
     font-weight: bold;
     font-size:x-large;
-    padding: 50px;
-    margin: 200px;
-    color:rgb(160, 167, 62);
+    padding: 14px;
+    
+    color:rgb(255, 255, 255);
    
 }
 li{
@@ -19,15 +27,65 @@ li{
 main{
     display: flex;
 }
+
+  #fish1{
+    position: absolute;
+    left: 10%;
+    top: 40%;
+  }
+  #fish2{
+    position: absolute;
+    left: 90%;
+    top: 40%;
+  }
+ 
+  
+
+#cutter {
+    position: absolute;
+     left: 25%;
+}
+#family{
+    position: absolute;
+     left: 41%;
+     top: 40%;
+}
+#fish{
+    position: absolute;
+    left: 54%;
+}
+#fro{
+    position: absolute;
+     left: 70%;
+     top: 40%;
+}
+#shirt{
+    position: absolute;
+     left: 80%;
+}
 img{
+    border: 15px solid transparent;
     
-    border: 9px solid rgb(160, 167, 62);
-    border-radius: 19px;
-    padding: 39px;
+    border: 9px solid rgb(144, 224, 238);
+    border-radius: 55px;
     width: 85px;
+    margin-right: 10%;
     
 }
+main{
+    margin-top: 20%;
+}
+.dropbtn{
+    font-family: Georgia;
+    font-size: medium;
+    font-weight: bold;
+
+
+}
+
 .dropdown{
+    font-family: Georgia;
+
     margin-right: 1%;
     padding-left: 15%;
 }
@@ -36,6 +94,7 @@ img{
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
+    font-family:  Verdana;
   }
   .dropdown-content a {
     color: black;
@@ -45,7 +104,27 @@ img{
   }
  
 input:required {
-    background-image: linear-gradient(to right, pink, lightgreen);
+    background-image: linear-gradient(to right, pink, rgb(144, 224, 238));
   }
-
-
+  body {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+  }
+  
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+   fieldset{
+    margin-left: 29%;
+    margin-right: 43%;
+    border: solid cornsilk;
+  }
